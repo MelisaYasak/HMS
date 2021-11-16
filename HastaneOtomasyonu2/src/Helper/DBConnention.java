@@ -10,7 +10,7 @@ public class DBConnention {
 	}
 	public Connection connDb() {
 		try {
-			this.c = DriverManager.getConnection("jdbc:mariadb://localhost:3325/hospital?user=root&password=root");
+			this.c = DriverManager.getConnection("jdbc:mariadb://localhost:****/hospital?user=****&password=****");
 			return c;
 		}catch(SQLException e) {
 			e.printStackTrace();
