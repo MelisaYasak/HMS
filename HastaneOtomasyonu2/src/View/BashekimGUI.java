@@ -92,11 +92,11 @@ public class BashekimGUI extends JFrame {
 	public BashekimGUI(Bashekim bashekim) throws SQLException {
 		// Doctor Model
 		doctorModel = new DefaultTableModel();
-		Object[] colDoctor = new Object[4]; // String tanýmlanabilirdi!
+		Object[] colDoctor = new Object[4]; // String tanÄ±mlanabilirdi!
 		colDoctor[0] = "ID";
 		colDoctor[1] = "T.C. No";
 		colDoctor[2] = "Ad Soyad";
-		colDoctor[3] = "Þifre";
+		colDoctor[3] = "Ãžifre";
 		doctorModel.setColumnIdentifiers(colDoctor);
 		doctorData = new Object[4];
 		for (int i = 0; i < bashekim.getDoctorList().size(); i++) {
@@ -109,9 +109,9 @@ public class BashekimGUI extends JFrame {
 
 		// Clinic Model
 		clinicModel = new DefaultTableModel();
-		Object[] colClinic = new Object[2]; // String tanýmlanabilirdi!
+		Object[] colClinic = new Object[2]; // String tanÃ½mlanabilirdi!
 		colClinic[0] = "ID";
-		colClinic[1] = "POLÝKLÝNÝK ADI";
+		colClinic[1] = "POLÃKLÃNÃK ADI";
 		clinicModel.setColumnIdentifiers(colClinic);
 		clinicData = new Object[2];
 		for (int i = 0; i < clinic.getList().size(); i++) {
@@ -129,7 +129,7 @@ public class BashekimGUI extends JFrame {
 		Object[] workerData = new Object[2];
 
 		setResizable(false);
-		setTitle("HASTANAE YÖNETÝM SÝSTEMÝ");
+		setTitle("HASTANAE YÃ–NETÃM SÃSTEMÃ");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 760, 510);
 		w_pane = new JPanel();
@@ -146,8 +146,8 @@ public class BashekimGUI extends JFrame {
 		btnExit.setBackground(UIManager.getColor("Button.light"));
 		btnExit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				LoginGUI lguý = new LoginGUI();
-				lguý.setVisible(true);
+				LoginGUI lguÃ½ = new LoginGUI();
+				lguÃ½.setVisible(true);
 				dispose();
 			}
 		});
@@ -163,7 +163,7 @@ public class BashekimGUI extends JFrame {
 		JPanel panelbhdoctor = new JPanel();
 		panelbhdoctor.setBorder(new LineBorder(new Color(0, 153, 204), 3, true));
 		panelbhdoctor.setBackground(Color.WHITE);
-		tabbedpaneBh.addTab("Doktor Yönetimi", null, panelbhdoctor, null);
+		tabbedpaneBh.addTab("Doktor YÃ¶netimi", null, panelbhdoctor, null);
 		panelbhdoctor.setLayout(null);
 
 		txtbhName = new JTextField();
@@ -193,7 +193,7 @@ public class BashekimGUI extends JFrame {
 		btnbhDelete.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (txtbhKullaniciid.getText().length() == 0) {
-					Helper.showMsg("Lütfen geçerli bir doktor seçiniz!");
+					Helper.showMsg("LÃ¼tfen geÃ§erli bir doktor seÃ§iniz!");
 				} else {
 					if (Helper.confirm("del")) {
 						int selectID = Integer.parseInt(txtbhKullaniciid.getText());
@@ -202,15 +202,14 @@ public class BashekimGUI extends JFrame {
 							if (control) {
 								Helper.showMsg("success");
 								txtbhKullaniciid.setText(null);
-								//Doctor.java daki deleteWhour ile düzenlenebilir mi?
+								//Doctor.java daki deleteWhour ile dÃ¼zenlenebilir mi?
 								Whour wh = new Whour();
 								wh.deleteWhours(selectID);
 								Appointment ap = new Appointment();
 								ap.deleteAppoints(selectID);
 								bashekim.deleteWorkers(selectID);
 								updateDoctorModel();
-								updatecb();
-								
+								updatecb();	
 							}
 
 						} catch (SQLException e1) {
@@ -299,7 +298,6 @@ public class BashekimGUI extends JFrame {
 				} catch (Exception ex) {
 				}
 			}
-
 		});
 
 		tableDoctor.getModel().addTableModelListener(new TableModelListener() {
@@ -321,10 +319,8 @@ public class BashekimGUI extends JFrame {
 
 						e1.printStackTrace();
 					}
-
 				}
 			}
-
 		});
 
 		JPanel panelclinic = new JPanel();
@@ -339,7 +335,7 @@ public class BashekimGUI extends JFrame {
 		panelclinic.add(scrolpaneclinic);
 
 		clinicMenu = new JPopupMenu();
-		JMenuItem updateMenu = new JMenuItem("Güncelle");
+		JMenuItem updateMenu = new JMenuItem("GÃ¼ncelle");
 		JMenuItem deleteMenu = new JMenuItem("Sil");
 		clinicMenu.add(updateMenu);
 		clinicMenu.add(deleteMenu);
@@ -384,7 +380,6 @@ public class BashekimGUI extends JFrame {
 						if (clinic.deleteClinic(selID)) {
 							Helper.showMsg("success");
 							updateClinicModel();
-
 						} else {
 							Helper.showMsg("error");
 						}
@@ -394,7 +389,6 @@ public class BashekimGUI extends JFrame {
 					}
 				}
 			}
-
 		});
 
 		tableClinic = new JTable(clinicModel);
@@ -495,7 +489,7 @@ public class BashekimGUI extends JFrame {
 						e1.printStackTrace();
 					}
 				} else {
-					Helper.showMsg("Lütfen poliklinik seçiniz!");
+					Helper.showMsg("LÃ¼tfen poliklinik seÃ§iniz!");
 				}
 			}
 		});
@@ -529,7 +523,7 @@ public class BashekimGUI extends JFrame {
 					}
 					tableWorker.setModel(workerModel);
 				} else {
-					Helper.showMsg("Lütfen ");
+					Helper.showMsg("LÃ¼tfen ");
 				}
 			}
 		});
@@ -568,5 +562,4 @@ public class BashekimGUI extends JFrame {
 					new Item(bashekim.getDoctorList().get(i).getId(), bashekim.getDoctorList().get(i).getName()));
 		}
 	}
-
 }
