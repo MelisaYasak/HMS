@@ -5,10 +5,10 @@ import javax.swing.UIManager;
 
 public class Helper {
 	public static void optionPaneChangeButtonText() {
-		UIManager.put("OptionPane.cancelButtonText", "Ýptal");
+		UIManager.put("OptionPane.cancelButtonText", "İptal");
 		UIManager.put("OptionPane.okButtonText", "Tamam");
 		UIManager.put("OptionPane.yesButtonText", "Evet");
-		UIManager.put("OptionPane.noButtonText", "Hayýr");
+		UIManager.put("OptionPane.noButtonText", "Hayır");
 	}
 	
 	public static void showMsg(String str) {
@@ -17,16 +17,16 @@ public class Helper {
 		optionPaneChangeButtonText();
 		switch (str) {
 		case "fill":
-			msg = "Lütfen tüm alanlarý doldurunuz!";
+			msg = "Lütfen tüm alanları doldurunuz!";
 			break;
 		case "success":
-			msg = "Ýþlem Baþarýlý!";
+			msg = "İşlem Başarılı!";
 			break;
 		case "error":
 			msg= "HATA";
 			break;
 		case "wrong":
-			msg = "Yanlýþ deðer girdiniz!";
+			msg = "Yanlış değer girdiniz!";
 			break;
 		default:
 			msg = str;
@@ -40,10 +40,10 @@ public class Helper {
 		optionPaneChangeButtonText();
 		switch (str) {
 		case "del":
-			msg = "Silmek istediðinize emin misiniz?";
+			msg = "Silmek istediğinize emin misiniz?";
 			break;
 		case "update":
-			msg = "Deðiþtirmek istediðinizden emin misiniz?";
+			msg = "Değiştirmek istediğinizden emin misiniz?";
 			break;
 		default:
 			msg = str;	
