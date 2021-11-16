@@ -5,10 +5,10 @@ import javax.swing.UIManager;
 
 public class Helper {
 	public static void optionPaneChangeButtonText() {
-		UIManager.put("OptionPane.cancelButtonText", "İptal");
+		UIManager.put("OptionPane.cancelButtonText", "Ãptal");
 		UIManager.put("OptionPane.okButtonText", "Tamam");
 		UIManager.put("OptionPane.yesButtonText", "Evet");
-		UIManager.put("OptionPane.noButtonText", "Hayır");
+		UIManager.put("OptionPane.noButtonText", "HayÃ½r");
 	}
 	
 	public static void showMsg(String str) {
@@ -17,16 +17,16 @@ public class Helper {
 		optionPaneChangeButtonText();
 		switch (str) {
 		case "fill":
-			msg = "Lütfen tüm alanları doldurunuz!";
+			msg = "LÃ¼tfen tÃ¼m alanlarÃ½ doldurunuz!";
 			break;
 		case "success":
-			msg = "İşlem Başarılı!";
+			msg = "ÃÃ¾lem BaÃ¾arÃ½lÃ½!";
 			break;
 		case "error":
 			msg= "HATA";
 			break;
 		case "wrong":
-			msg = "Yanlış değer girdiniz!";
+			msg = "YanlÃ½Ã¾ deÃ°er girdiniz!";
 			break;
 		default:
 			msg = str;
@@ -40,10 +40,10 @@ public class Helper {
 		optionPaneChangeButtonText();
 		switch (str) {
 		case "del":
-			msg = "Silmek istediğinize emin misiniz?";
+			msg = "Silmek istediÃ°inize emin misiniz?";
 			break;
 		case "update":
-			msg = "Değiştirmek istediğinizden emin misiniz?";
+			msg = "DeÃ°iÃ¾tirmek istediÃ°inizden emin misiniz?";
 			break;
 		default:
 			msg = str;	
@@ -59,12 +59,12 @@ public class Helper {
 	}
 	
 	
-	//FIXME : POLİKLİNİK TARAFINDA SİLİNEN DOKTORUN YERİNDE BOŞ SATIR KALIYOR.
-	//FIXME : DOKTOR SİLİNCE user TABLOSUNDAN SİLİNİYOR AMA worker TABLOSUNDAN SİLİNMİYIOR. 
-	//FIXME : POLİKLİNİĞİ SİLİNCE clinic TABLOSUNDAN SİLİNİYOR AMA  worker TABLOSUNDAN SİLİNMİYIOR.
-	//FIXME : DOKTOR POLİKLİNİĞE BAĞLANMADAN ÇALIŞMA SAATİ SEÇEBİLİYOR YAPMAMALI
-	//FIXME : SİLİNEN DOKTORUN whour TABLOSUNDAKİ ÇALIŞMA SAATLERİ DE SİLİNMELİ.
-	//FIXME : AYNI ANDA DOKTOR HASTA GİRİŞİ YAPMALI
-	//FIXME : STATUSDEN P LERİ A YAPINCA APPOİNMENT DA RANDEVULAAR SİLİNMİYOR.
+	//FIXME : Poiklinik tarafÄ±nda silinen doktorun yerinde boÅŸ satÄ±r kalÄ±yor.
+	//FIXME : Doktor silinince user tablosundan siliniyor ama worker tablosundan silinmiyor. // Relational Database bilmediÄŸim iÃ§in 
+	//FIXME : Poliklinik silinince clinic tablosundan siliniyor ama worker tablosundan silinmiyor.
+	//FIXME : Doktor polikliniÄŸindebaÄŸlanmadan Ã§alÄ±ÅŸma saati seÃ§ebiliyor, yapmamalÄ±.
+	//FIXME : Silinen doktorun whour tablosundaki Ã§alÄ±ÅŸma saatleri de silinmeli.
+	//FIXME : AynÄ± anda doktor hasta giriÅŸi yapmalÄ±.
+	//FIXME : Statuste p leri a yapÄ±nca appointment da randevular silinmiyor.
 
 }
